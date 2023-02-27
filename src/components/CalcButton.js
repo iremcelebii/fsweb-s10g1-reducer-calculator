@@ -1,11 +1,22 @@
-import React from 'react';
+import React from "react";
 
 const CalcButton = (props) => {
-  const { value, onClick = (e) => { }, size = 4 } = props;
-
-  return (<div className={`col-xs-${size}`}>
-    <button value={value} type="button" onClick={(e) => { onClick(e) }} className="btn">{value}</button>
-  </div>);
-}
+  const { valueDegeri, onClickFunc, size = 4 } = props;
+  // = (e) => { } fonksiyon olduğunu belirtmeye çalışmış sanırım
+  return (
+    <div className={`col-xs-${size}`}>
+      <button
+        value={valueDegeri}
+        type="button"
+        onClick={(e) => {
+          onClickFunc(e);
+        }}
+        className="btn"
+      >
+        {valueDegeri}
+      </button>
+    </div>
+  );
+};
 
 export default CalcButton;
